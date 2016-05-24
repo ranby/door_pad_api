@@ -12,10 +12,12 @@ var kolonnvagen = function(req, res) {
 		};
 		for (var i in result.ResponseData.Buses) {
 			var item = result.ResponseData.Buses[i];
+			var type = item.GroupOfLine == 'blåbuss' ? 'BLUE BUS' : 'BUS';
 			answer.departures.push({
 				line: item.LineNumber,
 				destination: item.Destination,
-				time: item.DisplayTime
+				time: item.DisplayTime,
+				transportType: type
 			});
 		}
 		res.json(answer);
@@ -37,7 +39,8 @@ var solnastation = function(req, res) {
 			answer.departures.push({
 				line: item.LineNumber,
 				destination: item.Destination,
-				time: item.DisplayTime
+				time: item.DisplayTime,
+				transportType: 'TRAIN'
 			});
 		}
 		res.json(answer);
