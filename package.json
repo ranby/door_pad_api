@@ -1,0 +1,10 @@
+{
+  "name": "door_pad_api",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "~1.0.1",
+    "express": "~4.0.0",
+    "moment": "^2.13.0",
+    "request": "^2.72.0"
+  }
+}
