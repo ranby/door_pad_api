@@ -22,6 +22,8 @@ var home = function(req, res) {
 		var result = JSON.parse(body);
 		var currentHour = new Date().getHours();
 		var forecastStartHour = new Date(result.referenceTime).getHours();
+		if (forecastStartHour >  currentHour)
+			currentHour = 24 + currentHour;
 		var timeIndex = currentHour - forecastStartHour;
 
 		var wsym = result.timeSeries[timeIndex].parameters[18].values[0];
