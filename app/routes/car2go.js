@@ -3,6 +3,7 @@ var request = require('request');
 var getCars = function(req, res) {
 	url = "http://www.car2go.com/api/v2.1/vehicles?loc=stockholm&oauth_consumer_key=DooR_Pad&format=json";
 	request(url, function(error, response, body) {
+		console.log("Car2go answered: " + response.statusCode)
 		var result = JSON.parse(body);
 		var answer = {
 			cars: []
