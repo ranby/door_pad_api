@@ -8,7 +8,7 @@ var appRouter = function(app) {
 	app.get('/commute/kolonnvagen', commute.kolonnvagen);
 	app.get('/commute/solnastation', commute.solnastation);
 	app.get('/car2go/cars', car2go.cars);
-	app.get('/drivenow/login', drivenow.login);
+	app.get('/drivenow/cars', drivenow.cars);
 }
 
 module.exports = appRouter;
