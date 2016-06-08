@@ -35,6 +35,10 @@ var getCars = function(req, res) {
 	}
 	request(requestOption, function(error, response, body) {
 		console.log("DriveNow getCar answered: " + response.statusCode);
+		if (response.statusCode !== 200) {
+			authToken = null;
+			tryGetCars(req, res);
+		}
 		result = JSON.parse(body);
 		answer = {
 			cars: []
