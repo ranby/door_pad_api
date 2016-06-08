@@ -1,4 +1,8 @@
 .DS_Store
+
+# Secrets
+secrets.js
+
 # Created by https://www.gitignore.io/api/node
 
 ### Node ###

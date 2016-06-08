@@ -1,5 +1,5 @@
 var request = require('request');
-var querystring = require('querystring');
+var secret = require('../../secrets.js');
 var authToken = null;
 
 var login = function(req, res, callback) {	
@@ -10,8 +10,8 @@ var login = function(req, res, callback) {
 			"Content-Type":"application/json",
 		},
 		form: {
-			"user": "erik.ranby@gmail.com",
-			"password": "ejans111",
+			"user": secret.secret.driveNow.username,
+			"password": secret.secret.driveNow.password,
 			"current_tenant": "SE"
 		}
 	};
@@ -28,7 +28,7 @@ var getCars = function(req, res) {
 		uri: "https://api2.drive-now.com/cities/42128?expand=full",
 		method: "GET",
 		headers: {
-			"X-Api-Key":"adf51226795afbc4e7575ccc124face7",
+			"X-Api-Key": secret.secret.driveNow.apiKey,
 			"X-Auth-Token":authToken,
 			"X-language":"sv"
 		}

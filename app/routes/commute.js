@@ -1,7 +1,8 @@
 var request = require('request');
+var secret = require('../../secrets');
 
 var kolonnvagen = function(req, res) {
-	var slUrl = "http://api.sl.se/api2/realtimedepartures.json?key=afc1763d6441487799a1f516851632cc&siteid=3456&timewindow=60";
+	var slUrl = "http://api.sl.se/api2/realtimedepartures.json?key=" + secret.secret.sl.apiKey + "&siteid=3456&timewindow=60";
 	request(slUrl, function(error, response, body) {
 		console.log('SL (Kolonnvägen) answered: ' + response.statusCode);
 
@@ -25,7 +26,7 @@ var kolonnvagen = function(req, res) {
 }
 
 var solnastation = function(req, res) {
-	var slUrl = "http://api.sl.se/api2/realtimedepartures.json?key=afc1763d6441487799a1f516851632cc&siteid=9509&timewindow=60";
+	var slUrl = "http://api.sl.se/api2/realtimedepartures.json?key=" + secret.secret.sl.apiKey + "&siteid=9509&timewindow=60";
 	request(slUrl, function(error, response, body) {
 		console.log('SL (Solna Station) answered: ' + response.statusCode);
 
