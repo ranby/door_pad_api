@@ -51,7 +51,8 @@ var getCars = function(req, res) {
 				lat: item.latitude,
 				address: null,
 				fuel: item.fuelLevelInPercent,
-				licensePlate: item.licensePlate
+				licensePlate: item.licensePlate,
+				model: item.modelName
 			});
 		}
 		res.json(answer);

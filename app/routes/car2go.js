@@ -18,6 +18,7 @@ var getCars = function(req, res) {
 				address: item.address,
 				fuel: item.fuel,
 				licensePlate: item.name,
+				model: null,
 			});
 		}
 		res.json(answer);
