@@ -1,5 +1,5 @@
 # door_pad_api
-A `node.js` API to use with the `react` web app [door_pad](https://github.com/ranby/door_pad) (not yet publicly available).
+A `node.js` API to use with the `react` web app [door_pad](https://github.com/ranby/door_pad).
 
 ## Features ##
 Offers routes for the following three main uses.
