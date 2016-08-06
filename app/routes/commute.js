@@ -1,10 +1,10 @@
 var request = require('request');
 var secret = require('../../secrets');
 
-var kolonnvagen = function(req, res) {
-	var slUrl = "http://api.sl.se/api2/realtimedepartures.json?key=" + secret.secret.sl.apiKey + "&siteid=3456&timewindow=60";
+var rokubbsgatan = function(req, res) {
+	var slUrl = "http://api.sl.se/api2/realtimedepartures.json?key=" + secret.secret.sl.apiKey + "&siteid=1140&timewindow=60";
 	request(slUrl, function(error, response, body) {
-		console.log('SL (Kolonnvägen) answered: ' + response.statusCode);
+		console.log('SL (Rökubbsgatan) answered: ' + response.statusCode);
 
 		var result = JSON.parse(body);
 
@@ -25,18 +25,19 @@ var kolonnvagen = function(req, res) {
 	});
 }
 
-var solnastation = function(req, res) {
-	var slUrl = "http://api.sl.se/api2/realtimedepartures.json?key=" + secret.secret.sl.apiKey + "&siteid=9509&timewindow=60";
+var gardet = function(req, res) {
+	var slUrl = "http://api.sl.se/api2/realtimedepartures.json?key=" + secret.secret.sl.apiKey + "&siteid=9221&timewindow=60";
 	request(slUrl, function(error, response, body) {
-		console.log('SL (Solna Station) answered: ' + response.statusCode);
+		console.log('SL (Gärdet) answered: ' + response.statusCode);
 
 		var result = JSON.parse(body);
+		console.log(result);
 
 		var answer = {
 			departures: []
 		};
-		for (var i in result.ResponseData.Trains) {
-			var item = result.ResponseData.Trains[i];
+		for (var i in result.ResponseData.Metros) {
+			var item = result.ResponseData.Metros[i];
 			answer.departures.push({
 				line: item.LineNumber,
 				destination: item.Destination,
@@ -49,6 +50,6 @@ var solnastation = function(req, res) {
 }
 
 module.exports = {
-	kolonnvagen: kolonnvagen,
-	solnastation: solnastation
+	rokubbsgatan: rokubbsgatan,
+	gardet: gardet
 }

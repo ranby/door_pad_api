@@ -5,8 +5,8 @@ var drivenow = require('./drivenow.js');
 
 var appRouter = function(app) {
 	app.get('/weather/home', weather.home);
-	app.get('/commute/kolonnvagen', commute.kolonnvagen);
-	app.get('/commute/solnastation', commute.solnastation);
+	app.get('/commute/rokubbsgatan', commute.rokubbsgatan);
+	app.get('/commute/gardet', commute.gardet);
 	app.get('/car2go/cars', car2go.cars);
 	app.get('/drivenow/cars', drivenow.cars);
 }
