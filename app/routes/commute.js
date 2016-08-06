@@ -41,7 +41,7 @@ var gardet = function(req, res) {
 				line: item.LineNumber,
 				destination: item.Destination,
 				time: item.DisplayTime,
-				transportType: 'TRAIN'
+				transportType: 'METRO'
 			});
 		}
 		res.json(answer);
