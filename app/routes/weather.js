@@ -15,8 +15,8 @@ var getWeatherDescription = function(num) {
 }
 
 var home = function(req, res) {
-	var smhiUrlHagalund = "http://opendata-download-metfcst.smhi.se/api/category/pmp2g/version/2/geotype/point/lon/18.01141/lat/59.36251/data.json";
-	request(smhiUrlHagalund, function(error, response, body) {
+	var smhiUrlGardet = "http://opendata-download-metfcst.smhi.se/api/category/pmp2g/version/2/geotype/point/lon/18.11141/lat/59.34557/data.json";
+	request(smhiUrlGardet, function(error, response, body) {
 		console.log('SMHI answered: ' + response.statusCode);
 
 		var result = JSON.parse(body);

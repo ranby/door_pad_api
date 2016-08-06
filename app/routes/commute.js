@@ -31,7 +31,6 @@ var gardet = function(req, res) {
 		console.log('SL (Gärdet) answered: ' + response.statusCode);
 
 		var result = JSON.parse(body);
-		console.log(result);
 
 		var answer = {
 			departures: []
