@@ -9,6 +9,7 @@ var appRouter = function(app) {
 	app.get('/commute/gardet', commute.gardet);
 	app.get('/car2go/cars', car2go.cars);
 	app.get('/drivenow/cars', drivenow.cars);
+	app.get('/commute/:station/:transportType', commute.station);
 }
 
 module.exports = appRouter;
