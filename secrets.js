@@ -8,7 +8,8 @@ var secret = {
 		consumerKey: 'proDuCt'
 	},
 	sl: {
-		apiKey: 'asrfgr354h3fwfg5h43r3'
+		departuresApiKey: 'asrfgr354h3fwfg5h43r3',
+		placesApiKey: 'cfgsfhdtheryeutrjrddd'
 	}
 }
 
