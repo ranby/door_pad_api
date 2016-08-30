@@ -14,11 +14,16 @@ var getWeatherDescription = function(num) {
 		return 'rain';
 }
 
-var home = function(req, res) {
-	var smhiUrlGardet = "http://opendata-download-metfcst.smhi.se/api/category/pmp2g/version/2/geotype/point/lon/18.11141/lat/59.34557/data.json";
+var location = function(req, res) {
+	var lat = req.params.latitude;
+	var lng = req.params.longitude;
+	var smhiUrlGardet = "http://opendata-download-metfcst.smhi.se/api/category/pmp2g/version/2/geotype/point/lon/"+lng+"/lat/"+lat+"/data.json";
 	request(smhiUrlGardet, function(error, response, body) {
 		console.log('SMHI answered: ' + response.statusCode);
-
+		if (response.statusCode != 200) {
+			res.status(404).json({error: 'error'});
+			return;
+		}
 		var result = JSON.parse(body);
 		var currentHour = new Date().getHours();
 		var forecastStartHour = new Date(result.referenceTime).getHours();
@@ -69,5 +74,5 @@ var home = function(req, res) {
 }
 
 module.exports = {
-	home : home
+	location : location
 }
